@@ -9,7 +9,6 @@ class LoadingScreen extends StatefulWidget {
 }
 
 class _LoadingScreenState extends State<LoadingScreen> {
-
   Future<void> checkLocationPermission() async {
     bool serviceEnabled;
     LocationPermission permission;
@@ -29,16 +28,20 @@ class _LoadingScreenState extends State<LoadingScreen> {
     }
     if (permission == LocationPermission.deniedForever) {
       // permissões negadas para sempre
-      return Future.error('A permissão para acesso a localização foi negada para sempre. Não é possível pedir permissão.');
+      return Future.error(
+          'A permissão para acesso a localização foi negada para sempre. Não é possível pedir permissão.');
     }
   }
 
-  Future<void> getLocation() async { {
-    await checkLocationPermission(); //veridicar permissao de acesso
+  Future<void> getLocation() async {
+    {
+      await checkLocationPermission(); //veridicar permissao de acesso
 
-    Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.low); //pedir localizacao
+      Position position = await Geolocator.getCurrentPosition(
+          desiredAccuracy: LocationAccuracy.low); //pedir localizacao
 
-    print(position);
+      print(position);
+    }
   }
 
   @override
