@@ -25,4 +25,15 @@ class Location {
           'A permissão para acesso a localização foi negada para sempre. Não é possível pedir permissão.');
     }
   }
+
+  Future<void> getCurrentLocation() async {
+    {
+      await checkLocationPermission(); //veridicar permissao de acesso
+
+      Position position = await Geolocator.getCurrentPosition(
+          desiredAccuracy: LocationAccuracy.low); //pedir localizacao
+
+      print(position);
+    }
+  }
 }
