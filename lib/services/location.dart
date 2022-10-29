@@ -33,7 +33,8 @@ class Location {
       Position position = await Geolocator.getCurrentPosition(
           desiredAccuracy: LocationAccuracy.low); //pedir localizacao
 
-      print(position);
+      latitude = position.latitude;
+      longitude = position.longitude;
     }
   }
 }
