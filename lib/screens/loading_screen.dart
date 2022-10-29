@@ -46,15 +46,6 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            // obtém a localização atual
-          },
-          child: const Text('Obter Localização'),
-        ),
-      ),
-    );
+    return Scaffold();
   }
 }
