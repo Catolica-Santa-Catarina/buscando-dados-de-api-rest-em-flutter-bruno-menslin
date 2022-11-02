@@ -25,16 +25,6 @@ class _LoadingScreenState extends State<LoadingScreen> {
     pushToLocationScreen(weatherData);
   }
 
-  void getLocation() async {
-    Location location = Location();
-    await location.getCurrentLocation();
-
-    latitude = location.latitude!;
-    longitude = location.longitude!;
-
-    getData();
-  }
-
   @override
   void initState() {
     super.initState();
