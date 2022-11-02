@@ -19,10 +19,12 @@ class _LoadingScreenState extends State<LoadingScreen> {
     if (response.statusCode == 200) {
       // se a requisição foi feita com sucesso
       var data = response.body;
-
       var jsonData = jsonDecode(data);
-
-      print(data); // imprima o resultado
+      var cityName = jsonData['name'];
+      var temperature = jsonData['main']['temp'];
+      var weatherCondition = jsonData['weather'][0]['id'];
+      print(
+          'cidade: $cityName, temperatura: $temperature, condição: $weatherCondition');
     } else {
       print(response.statusCode); // senão, imprima o código de erro
     }
@@ -43,6 +45,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
   @override
   Widget build(BuildContext context) {
+    getData();
     return Scaffold();
   }
 }
