@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:tempo_template/services/location.dart';
 import 'package:tempo_template/services/networking.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:tempo_template/screens/location_screen.dart';
 
 const apiKey = '3139fffd8993df60af114840d40d010a';
 
@@ -18,9 +19,9 @@ class _LoadingScreenState extends State<LoadingScreen> {
   late double latitude;
   late double longitude;
 
-  void pushToLocationScreen() {
+  void pushToLocationScreen(dynamic weatherData) {
     Navigator.push(context, MaterialPageRoute(builder: (context) {
-      return const LocationScreen();
+      return LocationScreen(localWeatherData: weatherData);
     }));
   }
 
@@ -30,7 +31,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
         'data/2.5/weather?lat=$latitude&lon=$longitude&appid=$apiKey&units=metric');
 
     var weatherData = await networkHelper.getData();
-    this.pushToLocationScreen();
+    pushToLocationScreen(weatherData);
   }
 
   void getLocation() async {
