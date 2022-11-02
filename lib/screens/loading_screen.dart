@@ -29,6 +29,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
         'data/2.5/weather?lat=$latitude&lon=$longitude&appid=$apiKey&units=metric');
 
     var weatherData = await networkHelper.getData();
+    this.pushToLocationScreen();
   }
 
   void getLocation() async {
