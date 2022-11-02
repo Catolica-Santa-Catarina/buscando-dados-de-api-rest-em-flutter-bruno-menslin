@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:tempo_template/services/location.dart';
 import 'package:tempo_template/services/networking.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 const apiKey = '3139fffd8993df60af114840d40d010a';
 
@@ -50,6 +51,11 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return const Center(
+      child: SpinKitSpinningLines(
+        color: Colors.white,
+        size: 100.0,
+      ),
+    );
   }
 }
