@@ -11,6 +11,11 @@ class LocationScreen extends StatefulWidget {
 }
 
 class _LocationScreenState extends State<LocationScreen> {
+  late int temperature; // o valor, em inteiros, da temperatura
+  late String weatherIcon; // o ícone para a condição climática
+  late String cityName; // o nome da cidade
+  late String message; // Frase para o usuário, de acordo com a temperatura
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
