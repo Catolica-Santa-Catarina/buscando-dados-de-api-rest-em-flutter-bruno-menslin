@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tempo_template/services/weather.dart';
 import 'package:tempo_template/utilities/constants.dart';
+import 'package:tempo_template/services/weather.dart';
 
 class LocationScreen extends StatefulWidget {
   final dynamic localWeatherData;
@@ -15,6 +17,8 @@ class _LocationScreenState extends State<LocationScreen> {
   late String weatherIcon; // o ícone para a condição climática
   late String cityName; // o nome da cidade
   late String message; // Frase para o usuário, de acordo com a temperatura
+
+  WeatherModel weather = WeatherModel();
 
   @override
   Widget build(BuildContext context) {
