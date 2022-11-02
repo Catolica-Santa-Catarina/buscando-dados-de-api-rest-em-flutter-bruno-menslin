@@ -32,6 +32,12 @@ class _LocationScreenState extends State<LocationScreen> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    updateUI(widget.localWeatherData);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
