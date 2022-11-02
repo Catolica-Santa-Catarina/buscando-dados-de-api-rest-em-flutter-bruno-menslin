@@ -17,6 +17,12 @@ class _LoadingScreenState extends State<LoadingScreen> {
   late double latitude;
   late double longitude;
 
+  void pushToLocationScreen() {
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return const LocationScreen();
+    }));
+  }
+
   void getData() async {
     NetworkHelper networkHelper = NetworkHelper(
         'https://api.openweathermap.org/'
