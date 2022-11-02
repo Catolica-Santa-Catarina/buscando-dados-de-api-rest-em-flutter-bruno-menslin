@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:tempo_template/services/location.dart';
@@ -18,6 +19,9 @@ class _LoadingScreenState extends State<LoadingScreen> {
     if (response.statusCode == 200) {
       // se a requisição foi feita com sucesso
       var data = response.body;
+
+      var jsonData = jsonDecode(data);
+
       print(data); // imprima o resultado
     } else {
       print(response.statusCode); // senão, imprima o código de erro
